@@ -1,0 +1,8 @@
+RewriteEngine On
+
+Options All -Indexes
+
+RewriteCond %{SCRIPT_FILENAME} -d [OR]
+RewriteCond %{SCRIPT_FILENAME} -f
+RewriteRule "(^|/)\." - [F]
+RewriteRule "(^|/)\Class" - [F]
