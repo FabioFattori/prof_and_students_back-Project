@@ -15,4 +15,4 @@ if($id == null)
   die();
 }
 
-echo json_encode(PDOCommands::get_rows("select * from voto where ID_Studente=?",$id));
+echo json_encode(PDOCommands::get_rows("select * from voto inner join prof on prof.id=voto.ID_Prof where ID_Studente=? order by voto.id desc",$id));
